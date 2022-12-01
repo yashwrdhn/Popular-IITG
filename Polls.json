@@ -1,0 +1,54 @@
+{
+  "Polls": [
+    {
+      "id": 1,
+      "title": "Pizza",
+      "options": [
+        { "text": "Dominoes", "val": 8 },
+        { "text": "New Sac", "val": 18 },
+        { "text": "Khoka", "val": 2 },
+        { "text": "food court", "val": 0 }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Tandoori Chicken",
+      "options": [
+        { "text": "Lohit", "val": 8 },
+        { "text": "New Sac", "val": 18 },
+        { "text": "Khoka", "val": 2 },
+        { "text": "food court", "val": 0 }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Dosa",
+      "options": [
+        { "text": "Lohit", "val": 8 },
+        { "text": "New Sac", "val": 18 },
+        { "text": "Khoka", "val": 2 },
+        { "text": "food court", "val": 0 }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Biryani ",
+      "options": [
+        { "text": "lohit", "val": 0 },
+        { "text": "dihing", "val": 0 },
+        { "text": "spectrum", "val": 0 },
+        { "text": "manikanta", "val": 0 }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "proper",
+      "options": [
+        { "text": "option1", "val": 0 },
+        { "text": "option2", "val": 0 },
+        { "text": "option3", "val": 0 },
+        { "text": "option4", "val": 0 }
+      ]
+    }
+  ]
+}

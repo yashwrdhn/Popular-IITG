@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="text"> qr </label>
+    <input id="text" type="text" value="Please Enter Your NRIC or Work Permit" style="Width:20%"/ onblur='generateBarCode();'> 
+
+  <img id='barcode' src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100" alt="" title="HELLO" width="50" height="50" />
+
+  <script>
+  function generateBarCode() 
+{
+    var nric = $('#text').val();
+    var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=50x50';
+    $('#barcode').attr('src', url);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <!-- Compiled and minified CSS -->
+     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+     <link rel="stylesheet" href="../css/normalize.css">
+     <link rel="stylesheet" href="../css/skeleton.css">
+    <title> Poll </title>
+</head>
+<body>
+    <div class="container">
+       <hr>
+        <div class=" container row ">
+            <div class="five columns "> <h3> <%= poll.title %> </h3> </div>
+            <div class="five columns "><a class="button" href="../"> home </a>
+           <a class="button" href="/poll/create"> Create new Poll </a> </div>
+        
+        </div>
+        <hr>
+      </div>  
+  
+    <div class="container">
+        <div class="row"><div id="chartContainer" style="height:300px; width:60% "></div></div>
+    </div>
+    <div class="container">
+        <div class="four columns ">
+        <!-- <h1> <%= title %> <%= poll.id %> </h1> -->
+        <!-- <form>
+            <div class="row">
+              <div class="six columns">
+                <label for="exampleEmailInput">Your email</label>
+                <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="exampleEmailInput">
+              </div>
+              <div class="six columns">
+                <label for="exampleRecipientInput">Reason for contacting</label>
+                <select class="u-full-width" id="exampleRecipientInput">
+                  <option value="Option 1">Questions</option>
+                  <option value="Option 2">Admiration</option>
+                  <option value="Option 3">Can I get your number?</option>
+                </select>
+              </div>
+            </div>
+            <label for="exampleMessage">Message</label>
+            <textarea class="u-full-width" placeholder="Hi Dave …" id="exampleMessage"></textarea>
+            <label class="example-send-yourself-copy">
+              <input type="checkbox">
+              <span class="label-body">Send a copy to yourself</span>
+            </label>
+            <input class="button-primary" type="submit" value="Submit">
+          </form> -->
+         <hr> 
+        <form  id="vote-form">
+            
+            <label for="option1">
+                <input type="radio" name="option" id="option1" value="<%= poll.options[0].text %>" >
+                <span class="label-body"><h6> <%= poll.options[0].text %> : <%= poll.options[0].val %> </h5></span>
+            </label>
+                
+            <label for="option2">
+                <input type="radio" name="option" id="option2" value="<%= poll.options[1].text %>">
+                <span class="label-body"><h6> <%= poll.options[1].text %> : <%= poll.options[1].val %> </h5></span>
+            </label>
+            <label for="option3">
+                <input type="radio" name="option" id="option3" value="<%= poll.options[3].text %>">
+                <span class="label-body"><h6> <%= poll.options[2].text %> : <%= poll.options[2].val %> </h5></span>
+            </label>
+            <label for="option4">
+                <input type="radio" name="option" id="option4" value="<%= poll.options[0].text %>" >
+                <span class="label-body"><h6> <%= poll.options[3].text %> : <%= poll.options[3].val %> </h5></span>
+            </label>
+            
+            
+            
+            <input class="button" type="submit" text="vote-btn" value="Vote" class="btn">
+        </form>
+        
+        <% /* %>
+        <% poll.options.forEach(function(option) { %>
+            <div>
+               <%= option.text %>
+               <%= option.val %>
+            </div>
+            <% }); %>
+        <% */ %>
+           
+    </div>
+      
+    </div>
+    
+
+    <!-- <div> -->
+        <!-- <label for="qr"></label> -->
+        <!-- <input title="qr" id="text" type="text" 
+            value="NRIC or Work Permit" style="Width:20%" 
+            onblur='generateBarCode();'>  -->
+        <!-- <img id='barcode' 
+        src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld+<%= poll.id %>;size=100x100" 
+        alt="" 
+        title="HELLO" 
+        width="100" 
+        height="100" />   
+    </div> -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>    
+    <script type="text/javascript">
+        function generateBarCode()
+        {
+            var nric = $('#text').val();
+            var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=50x50';
+            $('#barcode').attr('src', url);
+        }
+    </script> -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/7.5.0/pusher.min.js" integrity="sha512-gMIYkbO5/ZWa84EDeuy8ahVMc0wkQpYqTIdStCwMI8B+S/8+TmxkY+R7gOjO/V3nDySRbrZ7OjFAW+gliWPp0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js" integrity="sha512-FJ2OYvUIXUqCcPf1stu+oTBlhn54W0UisZB/TNrZaVMHHhYvLBV9jMbvJYtvDe5x/WVaoXZ6KB+Uqe5hT2vlyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var parsed_data = '<%- JSON.stringify(poll) %>' 
+    </script> 
+     <script src="../js/main.js"></script>
+</body>
+ 
+</html>

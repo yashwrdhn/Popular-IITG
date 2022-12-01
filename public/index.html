@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <!-- Compiled and minified CSS -->
+     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+     <link rel="stylesheet" href="css/normalize.css">
+     <link rel="stylesheet" href="css/skeleton.css">
+
+    <title>polls</title>
+</head>
+<body>
+     
+    <div class="container">
+        <hr>
+        <div class="row ">
+            <div class="six columns "> <h3> Popular Food Polls @IITG </h3> </div>
+           <div class="four columns u-pull-right"><a class="button button-dark" href="/poll/create"> Create new Poll </a> </div>
+        
+        </div>
+        <hr>
+        
+            
+            
+        <% for( let i = 0; i < polls.length; ++i) { %>
+                <!-- <div class="three columns float-right"> <h4 ><%= polls[i].id %>. </h4> </div> -->
+            <div class="row ">
+                <div class="two columns ">  </h6> </div>
+               <div class="five columns "> <h4 > <%= polls[i].title %> </h6> </div>
+                <!-- <p> Total votes : <%  () => { console.log(3); } %>
+                </p> -->
+                <!-- <ul>
+                    <li> 
+                        <% Object.keys(polls[i].options).forEach(function(key) { %>
+                            <ul><li><%= key %> :  <%= polls[i].options[key] %></li></ul>
+                        <% }); %>
+                    </li>
+                </ul> -->
+                <div class="two columns ">  <a class="button" href="/poll/<%= polls[i].id %>"> View </a> </div>
+                <!-- <hr> -->
+            </div>
+            <!-- <a href="/polls/<%= polls[i].id %>"> vote </a>  -->
+        <% } %>
+
+    
+        
+    </div>
+    
+    
+
+      
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/7.5.0/pusher.min.js" integrity="sha512-gMIYkbO5/ZWa84EDeuy8ahVMc0wkQpYqTIdStCwMI8B+S/8+TmxkY+R7gOjO/V3nDySRbrZ7OjFAW+gliWPp0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js" integrity="sha512-FJ2OYvUIXUqCcPf1stu+oTBlhn54W0UisZB/TNrZaVMHHhYvLBV9jMbvJYtvDe5x/WVaoXZ6KB+Uqe5hT2vlyA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     
+</body>
+ 
+</html>
